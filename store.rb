@@ -49,16 +49,12 @@ class Store
     found_card
   end
 
-  def find_list(board, id)
-    puts board, id # delete later
+  def find_list(board, list_name)
+    board.lists.find { |list| list.name == list_name }
   end
 
-  def delete_list(board_id, list_id)
-    found_board = find_board id
-    puts found_board
-    puts found_board.lists
-    puts board_id, list_id # delete later
-    # found_board.lists.delete_if( |list| list.id == list_id)
-    # persist_json
+  def delete_list(board, list_name)
+    board.lists.delete_if{ |list| list.name == list_name}
+    persist_json
   end
 end
