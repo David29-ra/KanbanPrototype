@@ -1,3 +1,20 @@
 class List
-  def initialize; end
+  attr_reader :name, :cards, :id
+
+  @id_sequence = 0
+
+  def initialize(name:, cards: [], id: nil)
+    @id = id || self.class.next_id
+    self.class.sequence = @id
+    @name = name
+    @cards = cards
+  end
+
+  def self.sequence=(id)
+    @id_sequence = id
+  end
+
+  def self.next_id
+    @id_sequence += 1
+  end
 end

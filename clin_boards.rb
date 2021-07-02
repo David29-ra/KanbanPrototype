@@ -9,8 +9,9 @@ class ClinBoards
   include Formatter
   include Prompter
 
-  def initialize
-    # Complete this
+  def initialize(store = "store.json")
+    @store = Store.new(store)
+    @boards = @store.boards
   end
 
   def start
@@ -26,12 +27,16 @@ class ClinBoards
       when "update"
         puts "update"
       when "delete"
-        puts "delete"
+        delete_board(1)
       when "exit"
         puts "Goodbye!"
       else puts "Invalid option"
       end
 
     end
+  end
+
+  def delete_board(id)
+    @store.delete_board id
   end
 end
