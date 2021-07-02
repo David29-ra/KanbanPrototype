@@ -15,9 +15,9 @@ class ClinBoards
   end
 
   def start
+    welcome_message
     action = ""
     until action == "exit"
-      welcome_message
       print_boards
       action, _id = show_board_options
       case action
