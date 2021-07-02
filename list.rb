@@ -16,6 +16,10 @@ class List
     { id: @id, name: @name, cards: @cards }.to_json
   end
 
+  def update(data)
+    @name = data[:name] unless data[:name].empty?
+  end
+
   def self.sequence=(id)
     @id_sequence = id
   end
