@@ -2,9 +2,9 @@ require "terminal-table"
 
 module Formatter
   def welcome_message
-    puts "#" * 36
-    puts "##{' ' * 6}Welcome to CLIn Boards#{' ' * 6}#"
-    puts "#" * 36
+    puts ("#" * 36).center(85)
+    puts ("##{' ' * 6}Welcome to CLIn Boards#{' ' * 6}#").center(85)
+    puts ("#" * 36).center(85)
   end
 
   def print_boards
@@ -19,5 +19,10 @@ module Formatter
     table.headings = headings
     table.rows = list.map(&row_formatter)
     puts table
+  end
+
+  def show_board_options
+    puts "Board options: create | show ID | update ID | delete ID\nexit"
+    print ">"
   end
 end

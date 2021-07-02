@@ -17,6 +17,7 @@ class ClinBoards
   def start
     welcome_message
     print_boards
+    show_board_options
     action = ""
     until action == "exit"
       action = gets.chomp
