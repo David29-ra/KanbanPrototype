@@ -51,11 +51,12 @@ class ClinBoards
     until action == "back"
       found_board.lists.each { |li| print_list_card li }
       action, letter_id = print_menu_list
+      action = "show_#{action}" if action == "checklist"
       action_sym = action.gsub("-", "_").to_sym
 
       return if action == "back"
 
-      methods.include?(action_sym) ? method(action_sym).call(letter_id) : puts("Invalid action")
+      methods.include?(action_sym) ? method(action_sym).call(letter_id, found_board) : puts("Invalid action")
 
     end
   end
@@ -66,27 +67,31 @@ class ClinBoards
     @store.append_board board
   end
 
-  def create_list(_content)
+  def create_list(_content, _found_board)
     puts "create_list"
   end
 
-  def update_list(id)
+  def update_list(id, _found_board)
     puts "update_list -> #{id}"
   end
 
-  def delete_list(id)
+  def delete_list(id, _found_board)
     puts "delete_list -> #{id}"
   end
 
-  def create_card(_content)
+  def create_card(_content, _found_board)
     puts "create_card"
   end
 
-  def update_card(id)
+  def update_card(id, _found_board)
     puts "update_card -> #{id}"
   end
 
-  def delete_card(id)
+  def delete_card(id, _found_board)
     puts "delete_card -> #{id}"
+  end
+
+  def show_checklist(id, found_board)
+    pp @store.find_card found_board, id
   end
 end
