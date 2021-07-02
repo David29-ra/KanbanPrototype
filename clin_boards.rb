@@ -20,19 +20,11 @@ class ClinBoards
     until action == "exit"
       print_boards
       action, id = show_board_options
-      case action
-      when "create"
-        create_board
-      when "show"
-        show_board id
-      when "update"
-        update_board id
-      when "delete"
-        delete_board id
-      when "exit"
-        puts "Goodbye!"
-      else puts "Invalid option"
-      end
+      action_sym = "#{action}_board".to_sym
+      return puts "Goodbye" if action == "exit"
+
+      methods.include?(action_sym) ? method(action_sym).call(id) : puts("Invalid option")
+
     end
   end
 
@@ -61,7 +53,7 @@ class ClinBoards
     end
   end
 
-  def create_board
+  def create_board(_id)
     board_data = board_form
     board = Board.new(board_data)
     @store.append_board board
@@ -73,12 +65,16 @@ class ClinBoards
     @store.append_list found_board, list
   end
 
-  def update_list(id, _found_board)
-    puts "update_list -> #{id}"
+  def update_list(name, found_board)
+    found_list = @store.find_list_by_name found_board, name
+    list_name = list_form
+    found_list.update(list_name)
+    @store.persist_json
   end
 
-  def delete_list(id, _found_board)
-    puts "delete_list -> #{id}"
+  def delete_list(list_name, found_board)
+    # found_list = @store.find_list(found_board, list_name)
+    @store.delete_list(found_board, list_name)
   end
 
   def create_card(_content, found_board)
@@ -120,10 +116,10 @@ class ClinBoards
   end
 
   def toggle_check_item(index, found_card)
-    p found_card, index
+    @store.toggle_check_item index, found_card
   end
 
   def delete_check_item(index, found_card)
-    p found_card, index
+    @store.delete_check_item index, found_card
   end
 end
