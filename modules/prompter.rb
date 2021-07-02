@@ -39,7 +39,9 @@ module Prompter
 
   def print_checklist_format(card)
     puts "Card: #{card.title}"
-    card.checklist.each { |task| puts "[#{task[:completed] ? 'x' : ' '}] #{task[:title]}" }
+    card.checklist.each_with_index do |task, index|
+      puts "[#{task[:completed] ? 'x' : ' '}] #{index + 1}. #{task[:title]}"
+    end
     puts "-------------------------------------"
   end
 
