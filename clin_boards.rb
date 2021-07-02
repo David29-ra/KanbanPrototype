@@ -55,7 +55,7 @@ class ClinBoards
 
       return if action == "back"
 
-      methods.include?(action_sym) ? method(action_sym).call(letter_id) : puts("Invalid action")
+      methods.include?(action_sym) ? method(action_sym).call(letter_id, found_board) : puts("Invalid action")
 
     end
   end
@@ -66,11 +66,13 @@ class ClinBoards
     @store.append_board board
   end
 
-  def create_list(_content)
-    puts "create_list"
+  def create_list(_id, found_board)
+    list_name = list_form
+    list = List.new list_name
+    @store.append_list found_board, list
   end
 
-  def update_list(id)
+  def update_list(id, _found_board)
     puts "update_list -> #{id}"
   end
 

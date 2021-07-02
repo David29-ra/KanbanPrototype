@@ -30,4 +30,10 @@ module Prompter
     action, id = gets.chomp.split # ["show", "1"]
     [action, id.to_i]
   end
+
+  def list_form
+    print "Name: "
+    name = gets.chomp.strip
+    { name: name }
+  end
 end

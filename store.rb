@@ -39,5 +39,9 @@ class Store
     @boards << board
     persist_json
   end
-  
+
+  def append_list(board, list)
+    board.lists << list
+    persist_json
+  end
 end
