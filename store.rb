@@ -58,4 +58,12 @@ class Store
     card.checklist << data
     persist_json
   end
+
+  def toggle_check_item(index, card)
+    card.checklist[index - 1][:completed] = !card.checklist[index - 1][:completed]
+    persist_json
+  end
+
+  # def delete_check_item(index, card)
+  # end
 end

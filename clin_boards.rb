@@ -112,10 +112,10 @@ class ClinBoards
   end
 
   def toggle_check_item(index, found_card)
-    p found_card, index
+    @store.toggle_check_item index, found_card
   end
 
-  def delete_check_item(index, found_card)
-    p found_card, index
-  end
+  # def delete_check_item(index, found_card)
+  #   found_card.checklist.delete_at(index - 1)
+  # end
 end
