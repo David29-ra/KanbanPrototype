@@ -13,6 +13,11 @@ class Board
     @lists = lists.map { |list_item| List.new list_item }
   end
 
+  def update(data)
+    @name = data[:name] unless data[:name].empty?
+    @description = data[:description] unless data[:description].empty?
+  end
+
   def self.sequence=(id)
     @id_sequence = id
   end
