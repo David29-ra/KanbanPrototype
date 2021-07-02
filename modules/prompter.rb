@@ -31,6 +31,12 @@ module Prompter
     [action, id.to_i]
   end
 
+  def list_form
+    print "Name: "
+    name = gets.chomp.strip
+    { name: name }
+  end
+
   def print_checklist_format(card)
     puts "Card: #{card.title}"
     card.checklist.each { |task| puts "[#{task[:completed] ? 'x' : ' '}] #{task[:title]}" }

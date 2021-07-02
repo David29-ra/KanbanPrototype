@@ -67,8 +67,10 @@ class ClinBoards
     @store.append_board board
   end
 
-  def create_list(_content, _found_board)
-    puts "create_list"
+  def create_list(_id, found_board)
+    list_name = list_form
+    list = List.new list_name
+    @store.append_list found_board, list
   end
 
   def update_list(id, _found_board)
