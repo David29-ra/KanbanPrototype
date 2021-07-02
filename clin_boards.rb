@@ -28,7 +28,7 @@ class ClinBoards
       when "show"
         show_board 1
       when "update"
-        puts "update"
+        update_board(1)
       when "delete"
         delete_board(1)
       when "exit"
@@ -40,6 +40,11 @@ class ClinBoards
 
   def delete_board(id)
     @store.delete_board id
+  end
+
+  def update_board(id)
+    board_data = board_form
+    @store.update_board id, board_data
   end
 
   def show_board(id)
