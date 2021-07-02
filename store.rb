@@ -28,7 +28,7 @@ class Store
   end
 
   def persist_json
-    # File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
+    File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
   end
 
   def find_board(id)
@@ -38,5 +38,14 @@ class Store
   def append_board(board)
     @boards << board
     persist_json
+  end
+
+  def find_card(board, id)
+    found_card = nil
+    board.lists.each do |li|
+      card_temp = li.cards.find { |card| card.id == id }
+      found_card = card_temp if card_temp
+    end
+    found_card
   end
 end
