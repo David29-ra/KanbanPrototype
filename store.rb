@@ -53,4 +53,9 @@ class Store
     end
     found_card
   end
+
+  def append_checkitem(card, data)
+    card.checklist << data
+    persist_json
+  end
 end

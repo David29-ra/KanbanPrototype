@@ -102,13 +102,13 @@ class ClinBoards
       action_sym = "#{action}_check_item".to_sym
       return if action == "back"
 
-      pp action, index
       methods.include?(action_sym) ? method(action_sym).call(index, found_card) : puts("Invalid action")
     end
   end
 
   def add_check_item(_index, found_card)
-    p found_card
+    data = print_form_checkitem
+    @store.append_checkitem found_card, data
   end
 
   def toggle_check_item(index, found_card)
