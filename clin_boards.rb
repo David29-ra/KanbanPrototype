@@ -26,9 +26,9 @@ class ClinBoards
       when "show"
         show_board 1
       when "update"
-        update_board(1)
+        update_board 1 # FALTA AGREGAR LA VARIABLE DE ID
       when "delete"
-        delete_board(1)
+        delete_board 1 # FALTA AGREGAR LA VARIABLE DE ID
       when "exit"
         puts "Goodbye!"
       else puts "Invalid option"

@@ -24,11 +24,11 @@ class Store
 
   def delete_board(id)
     @boards.delete_if { |board| board.id == id }
-    persist_json
+    # persist_json
   end
 
   def persist_json
-    File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
+    # File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
   end
 
   def find_board(id)
