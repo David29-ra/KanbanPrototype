@@ -32,4 +32,5 @@ class Store
     @boards << board
     persist_json
   end
+  
 end
