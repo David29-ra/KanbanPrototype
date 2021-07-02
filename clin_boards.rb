@@ -11,6 +11,7 @@ class ClinBoards
 
   def initialize
     # Complete this
+    @boardlist = nil # this will be added later
   end
 
   def start
@@ -20,7 +21,7 @@ class ClinBoards
 
       case action
       when "create"
-        puts "create"
+        create_board
       when "show"
         puts "show"
       when "update"
@@ -33,5 +34,14 @@ class ClinBoards
       end
 
     end
+  end
+
+  def create_board
+    board_data = board_form
+    # board = Board.new(board_data)
+    # new_boardlist = @boardlist
+    # new_boardlist << board
+    # @boardlist = new_boardlist
+    # boardlist will be stored in json later
   end
 end
