@@ -10,7 +10,7 @@ class ClinBoards
   include Prompter
 
   def initialize
-    # Complete this
+    @store = nil # this will be added later
     @boardlist = nil # this will be added later
   end
 
@@ -39,10 +39,7 @@ class ClinBoards
   def create_board
     board_data = board_form
     board = Board.new(board_data)
-
-    # new_boardlist = @boardlist
-    # new_boardlist << board
-    # @boardlist = new_boardlist
-    # boardlist will be stored in json later
+    puts board # delete later
+    # @store.append_board board # to be used later
   end
 end
