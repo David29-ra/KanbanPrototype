@@ -64,6 +64,8 @@ class Store
     persist_json
   end
 
-  # def delete_check_item(index, card)
-  # end
+  def delete_check_item(index, card)
+    card.checklist.delete_at(index - 1)
+    persist_json
+  end
 end
