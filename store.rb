@@ -51,6 +51,7 @@ class Store
 
   def append_card(list, card)
     list.cards << card
+    persist_json
   end
 
   def find_card(board, id)
@@ -64,6 +65,11 @@ class Store
 
   def append_checkitem(card, data)
     card.checklist << data
+    persist_json
+  end
+
+  def save_card_last_id(board, next_id)
+    board.card_last_id = next_id
     persist_json
   end
 end
