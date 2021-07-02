@@ -9,6 +9,7 @@ module Formatter
 
   def print_boards
     print_content("CLI Boards", %w[ID Name Description List(#cards)], @boards) do |bo|
+      k = bo.list
       [bo.id, bo.name, bo.description, bo.lists[0].name] # Check list(#cards)
     end
   end

@@ -20,8 +20,10 @@ class ClinBoards
     show_board_options
     action = ""
     until action == "exit"
+      welcome_message
+      print_boards
+      show_board_options
       action = gets.chomp
-
       case action
       when "create"
         create_board
