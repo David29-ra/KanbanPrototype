@@ -47,5 +47,16 @@ class Store
       found_card = card_temp if card_temp
     end
     found_card
+
+  def find_list(board, id)
+    puts board, id # delete later
+  end
+
+  def delete_list(board_id, list_id)
+    found_board = find_board id
+    puts found_board
+    puts found_board.lists
+    # found_board.lists.delete_if( |list| list.id == list_id)
+    # persist_json
   end
 end
