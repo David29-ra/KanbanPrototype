@@ -20,4 +20,8 @@ class Board
   def self.next_id
     @id_sequence += 1
   end
+
+  def to_json(*_args)
+    { id: @id, name: @name, description: @description, lists: lists }.to_json
+  end
 end
