@@ -24,7 +24,7 @@ class ClinBoards
 
       case action
       when "create"
-        puts "create"
+        create_board
       when "show"
         puts "show"
       when "update"
@@ -36,5 +36,12 @@ class ClinBoards
       else puts "Invalid option"
       end
     end
+  end
+
+  def create_board
+    board_data = board_form
+    board = Board.new(board_data)
+    puts board # delete later
+    # @store.append_board board # to be used later
   end
 end
