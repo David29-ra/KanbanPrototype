@@ -5,12 +5,13 @@ class Board
 
   @id_sequence = 0
 
-  def initialize(name:, description:, lists: [], id: nil)
+  def initialize(name:, description:, lists: [], id: nil, card_last_id: nil)
     @id = id || self.class.next_id
     self.class.sequence = @id
     @name = name
     @description = description
     @lists = lists.map { |list_item| List.new list_item }
+    @card_last_id = card_last_id
   end
 
   def update(data)
