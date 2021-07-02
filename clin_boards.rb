@@ -50,7 +50,6 @@ class ClinBoards
   def create_board
     board_data = board_form
     board = Board.new(board_data)
-    puts board # delete later
-    # @store.append_board board # to be used later
+    @store.append_board board
   end
 end
