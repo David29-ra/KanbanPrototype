@@ -13,6 +13,10 @@ class Card
     @due_date = hash[:due_date]
   end
 
+  def to_json(*_args)
+    { id: @id, title: @title, members: @members, labels: @labels, checklist: @checklist, due_date: @due_date }.to_json
+  end
+
   def self.sequence=(id)
     @id_sequence = id
   end
