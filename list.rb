@@ -12,6 +12,10 @@ class List
     @cards = cards.map { |card| Card.new card }
   end
 
+  def to_json(*_args)
+    { id: @id, name: @name, cards: @cards }.to_json
+  end
+
   def self.sequence=(id)
     @id_sequence = id
   end
