@@ -11,7 +11,7 @@ class ClinBoards
 
   def initialize
     @store = nil # this will be added later
-    @boardlist = nil # this will be added later
+    @boards = nil # this will be added later
   end
 
   def start
