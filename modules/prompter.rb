@@ -33,7 +33,7 @@ module Prompter
 
   def print_checklist_format(card)
     puts "Card: #{card.title}"
-    card.checklist.each { |task| puts "[#{task[:completed] ? 'X' : ' '}] #{task[:title]}" }
+    card.checklist.each { |task| puts "[#{task[:completed] ? 'x' : ' '}] #{task[:title]}" }
     puts "-------------------------------------"
   end
 
@@ -42,5 +42,11 @@ module Prompter
     print "> "
     action, index = gets.chomp.split
     [action, index.to_i]
+  end
+
+  def print_form_checkitem
+    print "Title: "
+    title = gets.chomp.strip
+    { title: title, completed: false }
   end
 end
