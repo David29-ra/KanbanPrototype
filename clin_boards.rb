@@ -21,7 +21,7 @@ class ClinBoards
 
       case action
       when "create"
-        puts "create"
+        create_board
       when "show"
         show_board 1
       when "update"
@@ -43,5 +43,12 @@ class ClinBoards
   def show_board(id)
     found_board = @store.find_board id
     found_board.lists.each { |li| print_list_card li }
+  end
+
+  def create_board
+    board_data = board_form
+    board = Board.new(board_data)
+    puts board # delete later
+    # @store.append_board board # to be used later
   end
 end
