@@ -38,7 +38,8 @@ class ClinBoards
 
   def create_board
     board_data = board_form
-    # board = Board.new(board_data)
+    board = Board.new(board_data)
+
     # new_boardlist = @boardlist
     # new_boardlist << board
     # @boardlist = new_boardlist
