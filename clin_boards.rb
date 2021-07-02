@@ -44,7 +44,17 @@ class ClinBoards
 
   def show_board(id)
     found_board = @store.find_board id
-    found_board.lists.each { |li| print_list_card li }
+    action = ""
+    until action == "back"
+      found_board.lists.each { |li| print_list_card li }
+      action, letter_id = print_menu_list
+      action_sym = action.gsub("-", "_").to_sym
+
+      return if action == "back"
+
+      methods.include?(action_sym) ? method(action_sym).call(letter_id) : puts("Invalid action")
+
+    end
   end
 
   def create_board
@@ -52,5 +62,29 @@ class ClinBoards
     board = Board.new(board_data)
     puts board # delete later
     # @store.append_board board # to be used later
+  end
+
+  def create_list(_content)
+    puts "create_list"
+  end
+
+  def update_list(id)
+    puts "update_list -> #{id}"
+  end
+
+  def delete_list(id)
+    puts "delete_list -> #{id}"
+  end
+
+  def create_card(_content)
+    puts "create_card"
+  end
+
+  def update_card(id)
+    puts "update_card -> #{id}"
+  end
+
+  def delete_card(id)
+    puts "delete_card -> #{id}"
   end
 end
