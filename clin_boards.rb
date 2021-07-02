@@ -16,12 +16,10 @@ class ClinBoards
 
   def start
     welcome_message
-    print_boards
-    show_board_options
     action = ""
     until action == "exit"
-      action = gets.chomp
-
+      print_boards
+      action, _id = show_board_options
       case action
       when "create"
         create_board
