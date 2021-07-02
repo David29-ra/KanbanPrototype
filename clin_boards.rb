@@ -73,8 +73,11 @@ class ClinBoards
     @store.append_list found_board, list
   end
 
-  def update_list(id, _found_board)
-    puts "update_list -> #{id}"
+  def update_list(name, found_board)
+    found_list = @store.find_list_by_name found_board, name
+    list_name = list_form
+    found_list.update(list_name)
+    @store.persist_json
   end
 
   def delete_list(id, _found_board)
