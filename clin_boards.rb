@@ -81,8 +81,12 @@ class ClinBoards
     puts "delete_list -> #{id}"
   end
 
-  def create_card(_content, _found_board)
-    puts "create_card"
+  def create_card(_content, found_board)
+    # name_list = print_list_names found_board
+    # found_list = @store.find_list_by_name found_board, name_list
+    # card = print_form_card
+    # new_card = Card.new(card)
+    # pp new_card
   end
 
   def update_card(id, _found_board)

@@ -57,4 +57,22 @@ module Prompter
     title = gets.chomp.strip
     { title: title, completed: false }
   end
+
+  def print_list_names(board)
+    options = board.lists.map(&:name)
+    puts options.join(" | ")
+    gets.chomp.strip
+  end
+
+  def print_form_card
+    print "Title: "
+    title = gets.chomp.strip
+    print "Members: "
+    members = gets.chomp.split(", ")
+    print "Labels: "
+    labels = gets.chomp.split(", ")
+    print "Due Date: "
+    due_date = gets.chomp.strip
+    { title: title, members: members, labels: labels, due_date: due_date, checklist: [] }
+  end
 end

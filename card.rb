@@ -7,9 +7,9 @@ class Card
     @id = id || self.class.next_id
     self.class.sequence = @id
     @title = title
-    @members = collections[:members]
-    @labels = collections[:labels]
-    @checklist = collections[:checklist]
+    @members = collections[:members] || []
+    @labels = collections[:labels] || []
+    @checklist = collections[:checklist] || []
     @due_date = due_date
   end
 

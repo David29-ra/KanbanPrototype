@@ -45,6 +45,14 @@ class Store
     persist_json
   end
 
+  def find_list_by_name(board, name)
+    board.lists.find { |li| li.name == name }
+  end
+
+  def append_card(list, card)
+    list.cards << card
+  end
+
   def find_card(board, id)
     found_card = nil
     board.lists.each do |li|
