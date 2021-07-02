@@ -62,6 +62,14 @@ class Store
     found_card
   end
 
+  def find_list(board, list_name)
+    board.lists.find { |list| list.name == list_name }
+  end
+
+  def delete_list(board, list_name)
+    board.lists.delete_if { |list| list.name == list_name }
+  end
+
   def append_checkitem(card, data)
     card.checklist << data
     persist_json

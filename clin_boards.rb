@@ -51,6 +51,7 @@ class ClinBoards
     until action == "back"
       found_board.lists.each { |li| print_list_card li }
       action, letter_id = print_menu_list
+      puts letter_id
       action = "show_#{action}" if action == "checklist"
       action_sym = action.gsub("-", "_").to_sym
 
@@ -77,8 +78,9 @@ class ClinBoards
     puts "update_list -> #{id}"
   end
 
-  def delete_list(id, _found_board)
-    puts "delete_list -> #{id}"
+  def delete_list(list_name, found_board)
+    # found_list = @store.find_list(found_board, list_name)
+    @store.delete_list(found_board, list_name)
   end
 
   def create_card(_content, found_board)
