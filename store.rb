@@ -14,4 +14,17 @@ class Store
       Board.new(board)
     end
   end
+
+  def delete_board(id)
+    @boards.delete_if { |board| board.id == id }
+    persist_json
+  end
+
+  def persist_json
+    File.write(@filename, @boards.to_json)
+  end
+
+  def find_board(id)
+    @boards.find { |board| board.id == id }
+  end
 end

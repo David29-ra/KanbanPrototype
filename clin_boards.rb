@@ -26,16 +26,25 @@ class ClinBoards
       when "create"
         create_board
       when "show"
-        puts "show"
+        show_board 1
       when "update"
         puts "update"
       when "delete"
-        puts "delete"
+        delete_board(1)
       when "exit"
         puts "Goodbye!"
       else puts "Invalid option"
       end
     end
+  end
+
+  def delete_board(id)
+    @store.delete_board id
+  end
+
+  def show_board(id)
+    found_board = @store.find_board id
+    found_board.lists.each { |li| print_list_card li }
   end
 
   def create_board
