@@ -92,6 +92,12 @@ class ClinBoards
   end
 
   def show_checklist(id, found_board)
-    pp @store.find_card found_board, id
+    found_card = @store.find_card found_board, id
+    action = ""
+    until action == "back"
+      print_checklist_format found_card
+      action, index = print_menu_card
+      pp action, index
+    end
   end
 end
