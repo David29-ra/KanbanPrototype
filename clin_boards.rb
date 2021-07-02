@@ -23,7 +23,7 @@ class ClinBoards
       when "create"
         puts "create"
       when "show"
-        puts "show"
+        show_board 1
       when "update"
         puts "update"
       when "delete"
@@ -38,5 +38,10 @@ class ClinBoards
 
   def delete_board(id)
     @store.delete_board id
+  end
+
+  def show_board(id)
+    found_board = @store.find_board id
+    pp found_board
   end
 end

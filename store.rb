@@ -23,4 +23,8 @@ class Store
   def persist_json
     File.write(@filename, @boards.to_json)
   end
+
+  def find_board(id)
+    @boards.find { |board| board.id == id }
+  end
 end
