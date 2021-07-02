@@ -9,12 +9,14 @@ class ClinBoards
   include Formatter
   include Prompter
 
-  def initialize
-    # Complete this
+  def initialize(store = "store.json")
+    @store = Store.new(store)
+    @boards = @store.boards
   end
 
   def start
     welcome_message
+    print_boards
     action = ""
     until action == "exit"
       action = gets.chomp
