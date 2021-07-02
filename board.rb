@@ -1,7 +1,7 @@
 require_relative "list"
 
 class Board
-  attr_reader :id, :name, :description, :lists
+  attr_reader :name, :description, :lists, :id
 
   @id_sequence = 0
 
