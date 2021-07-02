@@ -1,5 +1,4 @@
 require_relative "list"
-require_relative "card"
 
 class Board
   attr_reader :name, :description, :lists, :id
