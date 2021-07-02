@@ -16,12 +16,10 @@ class ClinBoards
 
   def start
     welcome_message
-    print_boards
-    show_board_options
     action = ""
     until action == "exit"
-      action = gets.chomp
-
+      print_boards
+      action, _id = show_board_options
       case action
       when "create"
         create_board
@@ -55,7 +53,6 @@ class ClinBoards
   def create_board
     board_data = board_form
     board = Board.new(board_data)
-    puts board # delete later
-    # @store.append_board board # to be used later
+    @store.append_board board
   end
 end
