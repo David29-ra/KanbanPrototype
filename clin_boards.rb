@@ -1,7 +1,14 @@
-require_relative "formatter"
-require_relative "requester"
+require_relative "board"
+require_relative "list"
+require_relative "card"
+require_relative "store"
+require_relative "modules/formatter"
+require_relative "modules/prompter"
 
 class ClinBoards
+  include Formatter
+  include Prompter
+
   def initialize
     # Complete this
   end
@@ -10,6 +17,3 @@ class ClinBoards
     # Complete this
   end
 end
-
-app = ClinBoards.new
-app.start
