@@ -14,6 +14,7 @@ class ClinBoards
   end
 
   def start
+    welcome_message
     action = ""
     until action == "exit"
       action = gets.chomp
@@ -31,7 +32,6 @@ class ClinBoards
         puts "Goodbye!"
       else puts "Invalid option"
       end
-
     end
   end
 end
