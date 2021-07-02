@@ -1,4 +1,4 @@
-require_relative "terminal-table"
+require "terminal-table"
 
 module Formatter
 end

@@ -14,6 +14,24 @@ class ClinBoards
   end
 
   def start
-    # Complete this
+    action = ""
+    until action == "exit"
+      action = gets.chomp
+
+      case action
+      when "create"
+        puts "create"
+      when "show"
+        puts "show"
+      when "update"
+        puts "update"
+      when "delete"
+        puts "delete"
+      when "exit"
+        puts "Goodbye!"
+      else puts "Invalid option"
+      end
+
+    end
   end
 end
