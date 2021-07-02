@@ -1,5 +1,5 @@
 class Board
-  attr_reader :name, :description
+  attr_reader :name, :description, :lists, :id
 
   @id_sequence = 0
 
