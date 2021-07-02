@@ -5,9 +5,14 @@ class Board
 
   def initialize(name:, description:, lists: [], id: nil)
     @id = id || self.class.next_id
+    self.class.sequence = @id if id
     @name = name
     @description = description
     @lists = lists
+  end
+
+  def self.sequence=(id)
+    @id_sequence = id
   end
 
   def self.next_id
