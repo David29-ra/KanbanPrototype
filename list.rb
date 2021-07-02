@@ -1,3 +1,5 @@
+require_relative "card"
+
 class List
   attr_reader :name, :cards, :id
 
@@ -7,7 +9,7 @@ class List
     @id = id || self.class.next_id
     self.class.sequence = @id
     @name = name
-    @cards = cards
+    @cards = cards.map { |card| Card.new card }
   end
 
   def self.sequence=(id)

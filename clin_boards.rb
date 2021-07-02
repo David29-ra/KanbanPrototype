@@ -42,6 +42,6 @@ class ClinBoards
 
   def show_board(id)
     found_board = @store.find_board id
-    pp found_board
+    found_board.lists.each { |li| print_list_card li }
   end
 end

@@ -1,3 +1,5 @@
+require_relative "list"
+
 class Board
   attr_reader :id, :name, :description, :lists
 
@@ -8,7 +10,7 @@ class Board
     self.class.sequence = @id
     @name = name
     @description = description
-    @lists = lists
+    @lists = lists.map { |list_item| List.new list_item }
   end
 
   def self.sequence=(id)
