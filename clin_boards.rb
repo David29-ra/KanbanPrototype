@@ -68,8 +68,10 @@ class ClinBoards
     @store.append_board board
   end
 
-  def create_list(_content, _found_board)
-    puts "create_list"
+  def create_list(_id, found_board)
+    list_name = list_form
+    list = List.new list_name
+    @store.append_list found_board, list
   end
 
   def update_list(id, _found_board)
@@ -81,8 +83,12 @@ class ClinBoards
     @store.delete_list(found_board, list_name)
   end
 
-  def create_card(_content, _found_board)
-    puts "create_card"
+  def create_card(_content, found_board)
+    # name_list = print_list_names found_board
+    # found_list = @store.find_list_by_name found_board, name_list
+    # card = print_form_card
+    # new_card = Card.new(card)
+    # pp new_card
   end
 
   def update_card(id, _found_board)
@@ -102,20 +108,20 @@ class ClinBoards
       action_sym = "#{action}_check_item".to_sym
       return if action == "back"
 
-      pp action, index
       methods.include?(action_sym) ? method(action_sym).call(index, found_card) : puts("Invalid action")
     end
   end
 
   def add_check_item(_index, found_card)
-    p found_card
+    data = print_form_checkitem
+    @store.append_checkitem found_card, data
   end
 
   def toggle_check_item(index, found_card)
-    p found_card, index
+    @store.toggle_check_item index, found_card
   end
 
   def delete_check_item(index, found_card)
-    p found_card, index
+    @store.delete_check_item index, found_card
   end
 end
