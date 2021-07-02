@@ -36,4 +36,17 @@ module Prompter
     name = gets.chomp.strip
     { name: name }
   end
+
+  def print_checklist_format(card)
+    puts "Card: #{card.title}"
+    card.checklist.each { |task| puts "[#{task[:completed] ? 'X' : ' '}] #{task[:title]}" }
+    puts "-------------------------------------"
+  end
+
+  def print_menu_card
+    puts "Checklist options: add | toggle INDEX | delete INDEX\nback"
+    print "> "
+    action, index = gets.chomp.split
+    [action, index.to_i]
+  end
 end
