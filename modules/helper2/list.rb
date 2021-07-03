@@ -1,3 +1,5 @@
+require "colorize"
+
 module ClinHelpers
   def show_checklist(id, found_board)
     found_card = @store.find_card found_board, id
@@ -14,12 +16,18 @@ module ClinHelpers
 
   def create_list(_id, found_board)
     list_name = list_form
+    return puts("You need to add name".red) if list_name[:name].empty?
+
     list = List.new list_name
     @store.append_list found_board, list
   end
 
   def update_list(name, found_board)
+    return puts("You need to add list name".red) if name.to_s == "0" || name.empty?
+
     found_list = @store.find_list_by_name found_board, name
+    return puts("Invalid name".red) if found_list.nil?
+
     list_name = list_form
     found_list.update(list_name)
     @store.persist_json
