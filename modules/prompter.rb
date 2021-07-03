@@ -11,11 +11,11 @@ module Prompter
     puts "List options: create-list | update-list LISTNAME | delete-list LISTNAME"
     puts "Card options: create-card | checklist ID | update-card ID | delete-card ID\nback"
     print "> "
-    action, letter_id = gets.chomp.split
+    action, *letter_id = gets.chomp.split
     regex = /[a-zA-Z]/
-    return [action, letter_id] if letter_id&.match?(regex)
+    return [action, letter_id.join(" ")] if letter_id.join(" ")&.match?(regex)
 
-    [action, letter_id.to_i]
+    [action, letter_id.join(" ").to_i]
   end
 
   def welcome_message
@@ -60,7 +60,10 @@ module Prompter
 
   def print_list_names(board)
     options = board.lists.map(&:name)
+    return puts("There are no lists") if options.length.zero?
+
     puts options.join(" | ")
+    print "> "
     gets.chomp.strip
   end
 

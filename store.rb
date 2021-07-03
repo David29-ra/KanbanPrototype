@@ -19,12 +19,12 @@ class Store
   def update_board(id, data)
     found = find_board id
     found.update data
-    # persist_json
+    persist_json
   end
 
   def delete_board(id)
     @boards.delete_if { |board| board.id == id }
-    # persist_json
+    persist_json
   end
 
   def persist_json
@@ -51,6 +51,7 @@ class Store
 
   def append_card(list, card)
     list.cards << card
+    persist_json
   end
 
   def find_card(board, id)
@@ -62,8 +63,21 @@ class Store
     found_card
   end
 
+  def find_list(board, list_name)
+    board.lists.find { |list| list.name == list_name }
+  end
+
+  def delete_list(board, list_name)
+    board.lists.delete_if { |list| list.name == list_name }
+  end
+
   def append_checkitem(card, data)
     card.checklist << data
+    persist_json
+  end
+
+  def save_card_last_id(board, next_id)
+    board.card_last_id = next_id
     persist_json
   end
 
