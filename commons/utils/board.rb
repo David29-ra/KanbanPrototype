@@ -29,7 +29,7 @@ module ClinUtils
 
       return if action == "back"
 
-      methods.include?(action_sym) ? method(action_sym).call(letter_id, found_board) : puts("Invalid action")
+      methods.include?(action_sym) ? method(action_sym).call(letter_id, found_board) : puts("Invalid action".red)
     end
   end
 

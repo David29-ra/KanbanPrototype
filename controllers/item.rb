@@ -5,7 +5,7 @@ module StoreController
   end
 
   def save_card_last_id(board, next_id)
-    board.card_last_id = next_id
+    board.card_next_id = next_id
     persist_json
   end
 

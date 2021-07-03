@@ -3,6 +3,8 @@ require "colorize"
 module ClinUtils
   def show_checklist(id, found_board)
     found_card = @store.find_card found_board, id
+    return puts("ID not found".red) if found_card.nil?
+
     action = ""
     until action == "back"
       print_checklist_format found_card

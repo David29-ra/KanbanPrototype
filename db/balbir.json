@@ -1,0 +1,1 @@
+[{"id":1,"name":"Todo","description":"Holiwi","lists":[{"id":1,"name":"Todo","cards":[{"id":1,"title":"Pepito 1","members":["david*2","cristhian*2"],"labels":["coding"],"checklist":[{"title":"Primera tarea","completed":false},{"title":"Segunda tarea","completed":false}],"due_date":"2021-12-12"}]},{"id":2,"name":"In Progress","cards":[]}],"card_last_id":1}]

@@ -30,6 +30,6 @@ class Store
   end
 
   def persist_json
-    File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
+    File.write(@filename, @boards.to_json)
   end
 end

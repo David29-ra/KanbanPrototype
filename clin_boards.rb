@@ -29,7 +29,6 @@ class ClinBoards
       return end_message if action == "exit"
 
       methods.include?(action_sym) ? method(action_sym).call(id) : puts("Invalid option")
-
     end
   end
 end

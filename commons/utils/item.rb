@@ -12,12 +12,14 @@ module ClinUtils
     return puts("You need to enter ID".red) if index.zero?
 
     current_id = found_card.checklist[index - 1]
-    return puts("Invalid ID") if current_id.nil?
+    return puts("Invalid ID".red) if current_id.nil?
 
     @store.toggle_check_item current_id
   end
 
   def delete_check_item(index, found_card)
+    return puts("You need to enter ID".red) if index.zero?
+
     @store.delete_check_item index, found_card
   end
 end

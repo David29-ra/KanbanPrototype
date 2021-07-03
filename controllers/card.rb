@@ -4,12 +4,8 @@ module StoreController
     persist_json
   end
 
-  def update_card(board, id, data, name_list)
-    found_card = find_card board, id
-    found_card.update data
-    found_list = find_list_by_name board, name_list
-    delete_card board, id
-    append_card found_list, found_card
+  def update_card(card, data)
+    card.update data
     persist_json
   end
 
