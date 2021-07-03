@@ -20,19 +20,11 @@ class ClinBoards
     until action == "exit"
       print_boards
       action, id = show_board_options
-      case action
-      when "create"
-        create_board
-      when "show"
-        show_board id
-      when "update"
-        update_board id
-      when "delete"
-        delete_board id
-      when "exit"
-        puts "Goodbye!"
-      else puts "Invalid option"
-      end
+      action_sym = "#{action}_board".to_sym
+      return puts "Goodbye" if action == "exit"
+
+      methods.include?(action_sym) ? method(action_sym).call(id) : puts("Invalid option")
+
     end
   end
 
@@ -51,7 +43,6 @@ class ClinBoards
     until action == "back"
       found_board.lists.each { |li| print_list_card li }
       action, letter_id = print_menu_list
-      puts letter_id
       action = "show_#{action}" if action == "checklist"
       action_sym = action.gsub("-", "_").to_sym
 
@@ -62,7 +53,7 @@ class ClinBoards
     end
   end
 
-  def create_board
+  def create_board(_id)
     board_data = board_form
     board = Board.new(board_data)
     @store.append_board board
@@ -87,11 +78,15 @@ class ClinBoards
   end
 
   def create_card(_content, found_board)
-    # name_list = print_list_names found_board
-    # found_list = @store.find_list_by_name found_board, name_list
-    # card = print_form_card
-    # new_card = Card.new(card)
-    # pp new_card
+    name_list = print_list_names found_board
+    return if name_list.nil?
+
+    found_list = @store.find_list_by_name found_board, name_list
+    card = print_form_card
+    next_id = found_board.card_last_id
+    new_card = Card.new(card)
+    @store.append_card found_list, new_card
+    @store.save_card_last_id found_board, next_id
   end
 
   def update_card(id, _found_board)

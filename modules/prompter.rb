@@ -60,7 +60,10 @@ module Prompter
 
   def print_list_names(board)
     options = board.lists.map(&:name)
+    return puts("There are no lists") if options.length.zero?
+
     puts options.join(" | ")
+    print "> "
     gets.chomp.strip
   end
 
