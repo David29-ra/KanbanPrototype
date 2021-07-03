@@ -1,10 +1,4 @@
 module BoardOptions
-  def load_boards
-    JSON.parse(File.read(@filename), { symbolize_names: true }).map do |board|
-      Board.new(board)
-    end
-  end
-
   def update_board(id, data)
     found = find_board id
     found.update data

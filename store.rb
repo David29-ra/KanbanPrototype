@@ -11,9 +11,22 @@ class Store
   include CardOptions
   include ItemOptions
 
-  def initialize(filename)
+  def initialize(filename = "store.json")
     @filename = filename
     @boards = load_boards
+  end
+
+  def load_boards
+    return json_parse(@filename) if File.exist?(@filename)
+
+    File.write(@filename, [].to_json)
+    json_parse(@filename)
+  end
+
+  def json_parse(filename)
+    JSON.parse(File.read(filename), { symbolize_names: true }).map do |board|
+      Board.new(board)
+    end
   end
 
   def persist_json
