@@ -78,4 +78,10 @@ module Prompter
     due_date = gets.chomp.strip
     { title: title, members: members, labels: labels, due_date: due_date, checklist: [] }
   end
+
+  def end_message
+    puts "#" * 36
+    puts "##{' ' * 3}Thanks for using CLIn Boards#{' ' * 3}#"
+    puts "#" * 36
+  end
 end
