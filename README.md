@@ -1,4 +1,19 @@
 # CLIn Boards
+>How it looks
+>```ruby
+>+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
+>|                                                              CLI Boards                                                              |
+>+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
+>| ID | Name                                 | Description                           | List(#cards)                                     |
+>+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
+>| 1  | Extended - CLIn Boards(devedux)      | Task management for the last extended | Todo(6), In Progress(2), Code Review(1), Done(1) |
+>| 6  | Modules - Clin_Boards (monito)       | Task for the last part                |                                                  |
+>| 7  | validations - Clin_Boards (DavidO)   | cheack validations                    |                                                  |
+>| 8  | List class - Clin_Boards (Christian) | create and initialize list class      |                                                  |
+>+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
+>Board options: create | show ID | update ID | delete ID
+>exit
+>>
 
 > Before starting!
 >
