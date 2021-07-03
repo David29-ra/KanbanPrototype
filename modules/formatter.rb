@@ -1,10 +1,11 @@
 require "terminal-table"
+require "colorize"
 
 module Formatter
   def print_boards
     print_content("CLI Boards", %w[ID Name Description List(#cards)], @boards) do |bo|
-      lists_cardnumber = bo.lists.map { |li_c| "#{li_c.name}(#{li_c.cards.size})" }.join(", ")
-      [bo.id, bo.name, bo.description, lists_cardnumber]
+      lists_cardnumber = bo.lists.map { |li_c| "#{li_c.name}(#{li_c.cards.size.to_s.red})" }.join(", ")
+      [bo.id.to_s.red, bo.name, bo.description, lists_cardnumber]
     end
   end
 
