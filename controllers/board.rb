@@ -1,7 +1,6 @@
-module StoreHelper
-  def update_board(id, data)
-    found = find_board id
-    found.update data
+module StoreController
+  def update_board(data, board)
+    board.update data
     persist_json
   end
 

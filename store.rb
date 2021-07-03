@@ -1,18 +1,18 @@
 require "json"
-require_relative "board"
-require_relative "modules/prompter"
-require_relative "modules/helper/board"
-require_relative "modules/helper/list"
-require_relative "modules/helper/card"
-require_relative "modules/helper/item"
+require_relative "models/board"
+require_relative "commons/helper/prompter"
+require_relative "controllers/board"
+require_relative "controllers/list"
+require_relative "controllers/card"
+require_relative "controllers/item"
 
 class Store
   attr_reader :boards
 
-  include StoreHelper
+  include StoreController
 
   def initialize(filename = "store.json")
-    @filename = filename
+    @filename = "db/#{filename}"
     @boards = load_boards
   end
 
@@ -30,6 +30,6 @@ class Store
   end
 
   def persist_json
-    File.write(@filename, @boards.to_json) # Coment to prove, this acction is not ended
+    File.write(@filename, @boards.to_json)
   end
 end
