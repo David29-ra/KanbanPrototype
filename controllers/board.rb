@@ -1,6 +1,4 @@
-require "colorize"
-
-module StoreHelper
+module StoreController
   def update_board(data, board)
     board.update data
     persist_json

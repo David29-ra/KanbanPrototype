@@ -1,4 +1,4 @@
-module StoreHelper
+module StoreController
   def append_list(board, list)
     board.lists << list
     persist_json
@@ -14,5 +14,6 @@ module StoreHelper
 
   def delete_list(board, list_name)
     board.lists.delete_if { |list| list.name == list_name }
+    persist_json
   end
 end

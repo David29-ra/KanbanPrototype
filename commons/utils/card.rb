@@ -1,6 +1,6 @@
 require "colorize"
 
-module ClinHelpers
+module ClinUtils
   def create_card(_content, found_board)
     name_list = get_name_list found_board
     found_list = @store.find_list_by_name found_board, name_list

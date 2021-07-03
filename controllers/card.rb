@@ -1,4 +1,4 @@
-module StoreHelper
+module StoreController
   def append_card(list, card)
     list.cards << card
     persist_json

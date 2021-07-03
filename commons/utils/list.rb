@@ -1,6 +1,6 @@
 require "colorize"
 
-module ClinHelpers
+module ClinUtils
   def show_checklist(id, found_board)
     found_card = @store.find_card found_board, id
     action = ""

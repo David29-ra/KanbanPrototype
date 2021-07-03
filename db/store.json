@@ -1,0 +1,255 @@
+[
+  {
+    "id": 1,
+    "name": "Extended - CLIn Boards(devedux)",
+    "description": "Holi",
+    "lists": [
+      {
+        "id": 1,
+        "name": "Todo",
+        "cards": [
+          {
+            "id": 1,
+            "title": "Check terminal-table gem",
+            "members": [
+              "Diego",
+              "Deyvi",
+              "Wences"
+            ],
+            "labels": [
+              "investigate"
+            ],
+            "checklist": [
+              {
+                "title": "Add gem to gemfile",
+                "completed": true
+              },
+              {
+                "title": "Make an example and share with the team",
+                "completed": false
+              },
+              {
+                "title": "Ask if this feature is mandatory",
+                "completed": true
+              }
+            ],
+            "due_date": "2020-11-19"
+          },
+          {
+            "id": 2,
+            "title": "Create Manager class",
+            "members": [],
+            "labels": [
+              "Coding"
+            ],
+            "checklist": [],
+            "due_date": "2020-11-20"
+          },
+          {
+            "id": 3,
+            "title": "Create JSON store",
+            "members": [],
+            "labels": [
+              "Coding"
+            ],
+            "checklist": [],
+            "due_date": "2020-11-20"
+          },
+          {
+            "id": 10,
+            "title": "Este es mi nuevo commit",
+            "members": [],
+            "labels": [],
+            "checklist": [],
+            "due_date": ""
+          },
+          {
+            "id": 10,
+            "title": "",
+            "members": [],
+            "labels": [
+              "asd"
+            ],
+            "checklist": [],
+            "due_date": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "In Progress",
+        "cards": [
+          {
+            "id": 4,
+            "title": "Create List class",
+            "members": [
+              "Deyvi"
+            ],
+            "labels": [
+              "coding",
+              "challenge"
+            ],
+            "checklist": [
+              {
+                "title": "Define initialize method",
+                "completed": true
+              },
+              {
+                "title": "Add public methods",
+                "completed": true
+              },
+              {
+                "title": "Share with the team for feedback",
+                "completed": false
+              }
+            ],
+            "due_date": "2020-11-19"
+          },
+          {
+            "id": 5,
+            "title": "Create Card class",
+            "members": [
+              "Wences"
+            ],
+            "labels": [
+              "coding"
+            ],
+            "checklist": [
+              {
+                "title": "Define initialize method",
+                "completed": true
+              },
+              {
+                "title": "Add public methods",
+                "completed": false
+              },
+              {
+                "title": "Check dependency with list class",
+                "completed": false
+              },
+              {
+                "title": "Share with the team for feedback",
+                "completed": false
+              }
+            ],
+            "due_date": "2020-11-19"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Code Review",
+        "cards": [
+          {
+            "id": 6,
+            "title": "Create Board class",
+            "members": [
+              "Diego"
+            ],
+            "labels": [
+              "coding",
+              "challenge"
+            ],
+            "checklist": [
+              {
+                "title": "Define initialize method",
+                "completed": true
+              },
+              {
+                "title": "Add public methods",
+                "completed": true
+              },
+              {
+                "title": "Share with the team for feedback",
+                "completed": false
+              }
+            ],
+            "due_date": "2020-11-19"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Done",
+        "cards": [
+          {
+            "id": 8,
+            "title": "Divide tasks",
+            "members": [
+              "devedux"
+            ],
+            "labels": [
+              "prep"
+            ],
+            "checklist": [
+              {
+                "title": "",
+                "completed": false
+              },
+              {
+                "title": "",
+                "completed": false
+              }
+            ],
+            "due_date": "2020-11-19"
+          },
+          {
+            "id": 10,
+            "title": "Holu",
+            "members": [],
+            "labels": [],
+            "checklist": [
+              {
+                "title": "New",
+                "completed": false
+              }
+            ],
+            "due_date": ""
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "NEW TODO",
+        "cards": []
+      }
+    ],
+    "card_last_id": 11
+  },
+  {
+    "id": 4,
+    "name": "Extended - Pokemon Battle",
+    "description": "Battle with pokemons ",
+    "lists": [],
+    "card_last_id": 14
+  },
+  {
+    "id": 5,
+    "name": "HOli",
+    "description": "",
+    "lists": [
+      {
+        "id": 5,
+        "name": "Todo",
+        "cards": [
+          {
+            "id": 9,
+            "title": "Holi",
+            "members": [],
+            "labels": [],
+            "checklist": [],
+            "due_date": ""
+          }
+        ]
+      }
+    ],
+    "card_last_id": 15
+  },
+  {
+    "id": 6,
+    "name": "New Holi",
+    "description": "veamos que tiene",
+    "lists": [],
+    "card_last_id": 16
+  }
+]

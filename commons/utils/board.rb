@@ -1,6 +1,6 @@
 require "colorize"
 
-module ClinHelpers
+module ClinUtils
   def delete_board(id)
     return puts("Invalid ID".red) if id.zero?
 

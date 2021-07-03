@@ -1,18 +1,18 @@
-require_relative "board"
-require_relative "list"
-require_relative "card"
 require_relative "store"
-require_relative "modules/formatter"
-require_relative "modules/prompter"
-require_relative "modules/helper2/board"
-require_relative "modules/helper2/list"
-require_relative "modules/helper2/card"
-require_relative "modules/helper2/item"
+require_relative "models/board"
+require_relative "models/list"
+require_relative "models/card"
+require_relative "commons/helper/formatter"
+require_relative "commons/helper/prompter"
+require_relative "commons/utils/board"
+require_relative "commons/utils/list"
+require_relative "commons/utils/card"
+require_relative "commons/utils/item"
 
 class ClinBoards
   include Formatter
   include Prompter
-  include ClinHelpers
+  include ClinUtils
 
   def initialize(store = "store.json")
     @store = Store.new(store)
