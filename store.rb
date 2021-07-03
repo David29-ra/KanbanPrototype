@@ -1,15 +1,15 @@
 require "json"
 require_relative "board"
 require_relative "modules/prompter"
-require_relative "modules/store_module"
+require_relative "modules/helper/board"
+require_relative "modules/helper/list"
+require_relative "modules/helper/card"
+require_relative "modules/helper/item"
 
 class Store
   attr_reader :boards
 
-  include BoardOptions
-  include ListOptions
-  include CardOptions
-  include ItemOptions
+  include StoreHelper
 
   def initialize(filename = "store.json")
     @filename = filename
