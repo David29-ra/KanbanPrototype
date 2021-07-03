@@ -1,7 +1,8 @@
+require "colorize"
+
 module StoreHelper
-  def update_board(id, data)
-    found = find_board id
-    found.update data
+  def update_board(data, board)
+    board.update data
     persist_json
   end
 
