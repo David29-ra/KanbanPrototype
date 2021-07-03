@@ -1,6 +1,5 @@
 require_relative "clin_boards"
+store = ARGV.shift
 
-# store = ARGV
-
-app = ClinBoards.new
+app = ClinBoards.new(store.nil? ? "store.json" : store)
 app.start
