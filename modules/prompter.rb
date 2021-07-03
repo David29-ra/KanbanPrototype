@@ -62,9 +62,15 @@ module Prompter
     options = board.lists.map(&:name)
     return puts("There are no lists") if options.length.zero?
 
-    puts options.join(" | ")
-    print "> "
-    gets.chomp.strip
+    name = ""
+    until options.include? name
+      puts options.join(" | ".red)
+      print "> "
+      name = gets.chomp.strip
+
+      puts("Invalid list name".red) unless options.include? name
+    end
+    name
   end
 
   def print_form_card
