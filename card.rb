@@ -17,6 +17,13 @@ class Card
     { id: @id, title: @title, members: @members, labels: @labels, checklist: @checklist, due_date: @due_date }.to_json
   end
 
+  def update(data)
+    @title = data[:title] unless data[:title].empty?
+    @due_date = data[:due_date] unless data[:due_date].empty?
+    @members = data[:members] unless data[:members].length.zero?
+    @labels = data[:labels] unless data[:labels].length.zero?
+  end
+
   def self.sequence=(id)
     @id_sequence = id
   end
