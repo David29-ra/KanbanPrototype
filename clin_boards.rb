@@ -91,16 +91,11 @@ class ClinBoards
   def update_card(id, found_board)
     name_list = print_list_names found_board
     card_data = print_form_card
-    new_list = @store.find_list_by_name found_board, name_list
-    pp "new_list.name -> #{new_list.name} -> name choose -> #{name_list}"
-    @store.update_card found_board, id, card_data
-
-    # @store.append_card new_list,
-    # pp found_card, name_list, new_list
+    @store.update_card found_board, id, card_data, name_list
   end
 
-  def delete_card(id, _found_board)
-    puts "delete_card -> #{id}"
+  def delete_card(id, found_board)
+    @store.delete_card found_board, id
   end
 
   def show_checklist(id, found_board)
