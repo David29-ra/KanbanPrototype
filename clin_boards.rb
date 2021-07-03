@@ -73,7 +73,6 @@ class ClinBoards
   end
 
   def delete_list(list_name, found_board)
-    # found_list = @store.find_list(found_board, list_name)
     @store.delete_list(found_board, list_name)
   end
 
@@ -89,8 +88,15 @@ class ClinBoards
     @store.save_card_last_id found_board, next_id
   end
 
-  def update_card(id, _found_board)
-    puts "update_card -> #{id}"
+  def update_card(id, found_board)
+    name_list = print_list_names found_board
+    card_data = print_form_card
+    new_list = @store.find_list_by_name found_board, name_list
+    pp "new_list.name -> #{new_list.name} -> name choose -> #{name_list}"
+    @store.update_card found_board, id, card_data
+
+    # @store.append_card new_list,
+    # pp found_card, name_list, new_list
   end
 
   def delete_card(id, _found_board)

@@ -54,6 +54,12 @@ class Store
     persist_json
   end
 
+  def update_card(board, id, data)
+    found_card = find_card board, id
+    found_card.update data
+    persist_json
+  end
+
   def find_card(board, id)
     found_card = nil
     board.lists.each do |li|
