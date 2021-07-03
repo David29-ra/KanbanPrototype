@@ -21,7 +21,7 @@ class ClinBoards
       print_boards
       action, id = show_board_options
       action_sym = "#{action}_board".to_sym
-      return puts "Goodbye" if action == "exit"
+      return end_message if action == "exit"
 
       methods.include?(action_sym) ? method(action_sym).call(id) : puts("Invalid option")
 
