@@ -1,73 +1,118 @@
 # CLIn Boards
->How it looks
->```ruby
->+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
->|                                                              CLI Boards                                                              |
->+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
->| ID | Name                                 | Description                           | List(#cards)                                     |
->+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
->| 1  | Extended - CLIn Boards(devedux)      | Task management for the last extended | Todo(6), In Progress(2), Code Review(1), Done(1) |
->| 6  | Modules - Clin_Boards (monito)       | Task for the last part                |                                                  |
->| 7  | validations - Clin_Boards (DavidO)   | cheack validations                    |                                                  |
->| 8  | List class - Clin_Boards (Christian) | create and initialize list class      |                                                  |
->+----+--------------------------------------+---------------------------------------+--------------------------------------------------+
->Board options: create | show ID | update ID | delete ID
->exit
->>
 
-> Before starting!
->
-> 1. Create a new folder with the project name and open it from VS Code
->
-> 2. From the VS Code terminal run the next docker command
->
-> ```powershell
-> docker container run \
-> --name ruby \
-> -it \
-> -v $(pwd):/app \
-> -v ssh:/root/.ssh \
-> -v bundle:/usr/local/bundle \
-> -e GIT_USER_NAME=<your_username> \
-> -e GIT_USER_EMAIL=<your_email> \
-> --rm \
-> codeableorg/ruby
-> ```
->
-> 3. Clone the repository of your work team
->
-> ```powershell
-> $ git clone git@github.com:codeableorg/calencli-c4w1-xxx.git .
-> ```
->
-> 4.  Run some initialization scripts
->
-> ```powershell
-> $ bootstrap
-> ```
->
-> 5.  Install some necessary gems for rubocop to work properly
->
-> ```powershell
-> $ bundle install
-> ```
->
-> ready, you can work on your project!
+THis is a group Poject develop with Ruby, it works like a Kanban board.
 
-Looking for the project instructions? Find them on [this notion doc](https://www.notion.so/ableco/Pokemon-Ruby-8d96d56eefe74bd982450b9513151a50)
+You can create, show, update and delete a board with the first menu.
 
-To disable temporarily any Rubocop convention:
+A board containd different lists(could be todo, progressive, etc), each list containd different cards(represent tasks).
 
-```
-# rubocop:disable Metrics/AbcSize
-def complex_and_irreducible_method(that, receive, a, lot, of, params)
-  ...
-  ...
-  ...
-end
-# rubocop:enable Metrics/AbcSize
+At the same way like board, you have a menu for list and card(create, show, update and delete).
+
+
+```ruby
+####################################
+#      Welcome to CLIn Boards      #
+####################################
++-------------------------------------------------------------------------------------------------------+
+|                                              CLIn Boards                                              |
++----+---------------------------------+-------------+--------------------------------------------------+
+| ID | Name                            | Description | List(#cards)                                     |
++----+---------------------------------+-------------+--------------------------------------------------+
+| 1  | Extended - CLIn Boards(devedux) | Holi        | Todo(3), In Progress(2), Code Review(1), Done(2) |
+| 2  | Pokemoncito                     |             | Todo(2), In Progress(2)                          |
++----+---------------------------------+-------------+--------------------------------------------------+
+Board options: create | show ID | update ID | delete ID
+exit
+>
 ```
 
-To disable them, use the convention that Rubocop is complaining about. _Metrics/AbcSize_ is just an example.
 
-Find the instructions [here](https://school.codeable.la/app/weeks/5/lessons/db2261426cd544c68ea3034355035f25)
+## Before starting!
+
+1. Install ruby
+2. Install ruby-bundler
+3. Run bundle install on terminal to intall gems
+```ruby
+$ bundle install
+```
+
+
+## To Start
+
+1. Run
+```ruby
+$ ruby main.rb
+```
+## If you can use Docker
+
+### On Linux/MacOS
+
+1. From the VS Code terminal run the next docker command
+
+```powershell
+docker container run \
+--name ruby \
+-it \
+-v $(pwd):/app \
+-v ssh:/root/.ssh \
+-v bundle:/usr/local/bundle \
+-e GIT_USER_NAME=<your_username> \
+-e GIT_USER_EMAIL=<your_email> \
+--rm \
+codeableorg/ruby
+```
+
+## If on Windows
+
+2. From the VS Code terminal, select Powershell terminal, then run the next docker command
+
+```powershell
+docker container run \
+--name ruby \
+-it \
+-v ${PWD}:/app \
+-v ssh:/root/.ssh \
+-v bundle:/usr/local/bundle \
+-e GIT_USER_NAME=<your_username> \
+-e GIT_USER_EMAIL=<your_email> \
+--rm \
+codeableorg/ruby
+```
+
+## Then
+
+3. Clone the repository
+
+```powershell
+$ git clone ...
+```
+
+4.  Run some initialization scripts
+
+```powershell
+$ bootstrap
+```
+
+5.  Install some necessary gems for rubocop to work properly
+
+```powershell
+$ bundle install
+```
+
+6. Run
+```powershell
+$ ruby main.rb
+```
+
+Ready, you can enjoy!
+
+<br/><br/>
+
+*Made by Monito Inc. 🙊*
+
+*Made by Devedux*
+
+*Made by ChirstianMRtz*
+
+*Made by Dortizp*
+

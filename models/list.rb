@@ -9,7 +9,7 @@ class List
     @id = id || self.class.next_id
     self.class.sequence = @id
     @name = name
-    @cards = cards.map { |card| Card.new card }
+    @cards = cards.map { |card| Card.new(**card) }
   end
 
   def to_json(*_args)

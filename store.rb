@@ -25,7 +25,7 @@ class Store
 
   def json_parse(filename)
     JSON.parse(File.read(filename), { symbolize_names: true }).map do |board|
-      Board.new(board)
+      Board.new(**board)
     end
   end
 

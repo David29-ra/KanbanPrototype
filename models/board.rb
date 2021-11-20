@@ -12,7 +12,7 @@ class Board
     self.class.sequence = @id
     @name = name
     @description = description
-    @lists = lists.map { |list_item| List.new list_item }
+    @lists = lists.map { |list_item| List.new(**list_item) }
     @card_next_id = card_last_id || self.class.card_id
     self.class.sequence_card_id = @card_next_id
   end
