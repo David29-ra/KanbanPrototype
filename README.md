@@ -1,4 +1,4 @@
-# CLIn Boards
+# Kanban Boards
 
 THis is a group Poject develop with Ruby, it works like a Kanban board.
 
